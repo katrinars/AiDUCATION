@@ -14,9 +14,9 @@ def home():
 def links():
     return render_template("links.html")
 
-@views.route("/privacy")
-def privacy():
-    return "social media/ai"
+@views.route("/ai")
+def ai():
+    return render_template("ai.html")
 
 @views.route("/strangers")
 def strangers():
