@@ -20,7 +20,8 @@ def privacy():
 
 @views.route("/strangers")
 def strangers():
-    return "good practices when talking to strangers"
+    # return "good practices when talking to strangers"
+    return render_template("strangers.html")
 
 @views.route("/protection")
 def protection():
