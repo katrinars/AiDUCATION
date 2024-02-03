@@ -25,7 +25,7 @@ def strangers():
 
 @views.route("/protection")
 def protection():
-    return "protecting important personal information"
+    return render_template("protect_info.html")
 
 @views.route("/quiz")
 def quiz():
