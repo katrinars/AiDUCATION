@@ -12,7 +12,7 @@ def home():
 
 @views.route("/links")
 def links():
-    return "suspicious links/urls"
+    return render_template("links.html")
 
 @views.route("/privacy")
 def privacy():
@@ -25,7 +25,7 @@ def strangers():
 
 @views.route("/protection")
 def protection():
-    return "protecting important personal information"
+    return render_template("protect_info.html")
 
 @views.route("/quiz")
 def quiz():
