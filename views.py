@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 
 views = Blueprint(__name__, "views")
 
@@ -18,10 +18,14 @@ def links():
 def ai():
     return render_template("ai.html")
 
-@views.route("/strangers")
+@views.route("/strangers", methods = ['POST','GET'])
 def strangers():
-    # return "good practices when talking to strangers"
-    return render_template("strangers.html")
+    if request.method == 'POST':
+        usr = request.form['nm']
+        print(usr)
+        return render_template("strangers.html", arg0=usr)
+    else:
+        return render_template("strangers.html", arg0='')
 
 @views.route("/protection")
 def protection():
