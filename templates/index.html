@@ -1,24 +1,74 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <div class="card mb-3">
+        <img src="/static/images/background2.jpg" class="card-img-top">
+        <h3 class="card-header text-center">Not Sure Where to Start?</h3>
+        <h5 class="card-title text-center">Take the AiDUCATION quiz to find the right internet safety and security information for you.</h5>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AiDUCATION</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    </head>
-    <body>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        
-        
-        <div>
-            <h1>HOME</h1>
-            <button type="button" class="btn btn-danger">Danger</button>
+        <!--QUIZ QUESTIONS-->
+        <div class="card-body">
+            <h5>Question 1: Which of the following URLs should you not click?</h5>
+                <input type="radio" name="q1" value="false"> www.facebook.com<br>
+                <input type="radio" name="q1" value="false"> www.securebanking.com<br>
+                <input type="radio" name="q1" value="true"> www.randomwebsite123.com<br>
+                <input type="radio" name="q1" value="false"> www.youtube.com<br>
         </div>
-    </body>
-    </html>
+        <div class="card-body">
+            <h5>Question 2: What is a deepfake?</h5>
+            <input type="radio" name="q2" value="false"> chicken that is baked instead of fried<br>
+            <input type="radio" name="q2" value="true"> a fake video made to look like a real person<br>
+            <input type="radio" name="q2" value="false"> an apology video from a social media influencer<br>
+            <input type="radio" name="q2" value="false"> a social media stan account<br>
+        </div>
+        <div class="card-body">
+            <h5>Question 3: Which of the following questions should you AVOID answering when talking to strangers online?</h5>
+            <input type="radio" name="q3" value="false"> What's your favorite animal?<br>
+            <input type="radio" name="q3" value="false"> Have you been to DisneyLand before?<br>
+            <input type="radio" name="q3" value="true"> What's your phone number?<br>
+            <input type="radio" name="q3" value="false"> Where did you get that shirt?<br>
+        </div>
+        <div class="card-body">
+            <h5>Question 4: Which of the following guarantees a message is safe?</h5>
+            <input type="radio" name="q4" value="false"> urgent deadline<br>
+            <input type="radio" name="q4" value="false"> official appearance<br>
+            <input type="radio" name="q4" value="false"> sent by family contacts<br>
+            <input type="radio" name="q4" value="false"> real money rewards<br>
+            <input type="radio" name="q4" value="true"> None of the above
+        </div>
+        
+        <button onclick="submit()">SUBMIT</button>
+    </div>
+        
+        <script>
+        function submit() {
+            var ans1 = document.querySelector('input[name="q1"]:checked').value;
+            var ans2 = document.querySelector('input[name="q2"]:checked').value;
+            var ans3 = document.querySelector('input[name="q3"]:checked').value;
+            var ans4 = document.querySelector('input[name="q3"]:checked').value;
+            
+            // route to info page based on incorrect answer, default to links page for 100% score
+            if (ans1 == 'false') {
+                window.location.href = '/links'
+            } else if (ans2 == 'false'){
+                window.location.href = '/ai'
+            } else if (ans3 == 'false'){
+                window.location.href = '/strangers'
+            } else if (ans4 == 'false'){
+                window.location.href = '/protection'
+            } else {
+                window.location.href = '/links'
+            }
+        }
+            
+        </script>
+    
+    <div>
+        <!--DANGER BUTTON-->
+        <button type="button" class="btn btn-danger">Danger</button>
+    </div>
+
 
 {% endblock %}
