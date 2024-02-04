@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AiDUCATION</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    
     <h1>Social Media + AI Safety</h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-    <div>
+    <div class="container">
         <p>So you want to learn about staying safe on social media and navigating the wonderful 
         world of artificial intelligence? Well, let’s go! Picture your social media profiles as super secret clubs – you want to keep them private 
         so only your ride-or-die buddies get in on the action. Before you let someone crash the 
@@ -34,7 +29,7 @@
             <li class="list-group-item">
                 <b>Use Superhero Strong Passwords</b>
                 <p>Passwords should be long enough to keep the wizards out but easy for you to remember. Keep
-                   your passwords between you and your trusted crew.</p>
+                your passwords between you and your trusted crew.</p>
             </li>
             <li class="list-group-item">
                 <b>Get a Little Artsy</b>
@@ -52,5 +47,6 @@
         to find. But like any playground, it’s important to stay safe while you're on it.
 
     </div>
-</body>
-</html>
+
+
+{% endblock %}
