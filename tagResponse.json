@@ -1,0 +1,64 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "responses": [
+        "Hello, young internet adventurers!",
+        "Hi there! What questions do you have for me?",
+        "Nice to meet you!",
+        "Let's start exploring cybersecurity with me!"
+      ]
+    },
+    {
+      "tag": "positive",
+      "responses": [
+        "Thanks for visiting!",
+        "<3",
+        "You are AMAZING!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "responses": [
+        "Have a nice day",
+        "Hope you enjoyed your journey here!"
+      ]
+    },
+    {
+      "tag": "nickname",
+      "responses": [
+        "Do not provide your name to strangers, they are your personal info.",
+        "People can stalk you if they know your real name",
+        "Real name can reveal your identity, so use nickname instead"
+      ]
+    },
+    {
+      "tag": "links",
+      "responses": [
+        "links can be harmful, so make sure it's some web you trust before clicking on it!",
+        "don't click on suspicious link!"
+      ]
+    },
+    {
+      "tag": "files",
+      "responses": [
+        "suspicious file can contain virus, so do not download them!",
+        "unknown file can make your computer vulnerable to hackers"
+      ]
+    },
+    {
+      "tag": "secret",
+      "responses": [
+        "keep your secret a secret. Revealing too much information may lead to identity fraud!",
+        "don't tell them anything that you won't tell a stranger on the street!"
+      ]
+    },
+    {
+      "tag": "identity",
+      "responses": [
+        "make sure that your friend's accout isn't stolen or hacked!",
+        "try to reach out to your friend in another way, and verify that it's them who send you the message!"
+      ]
+    }
+  ]
+}

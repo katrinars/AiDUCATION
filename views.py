@@ -1,7 +1,11 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, jsonify
 
 views = Blueprint(__name__, "views")
+from chatbox import getReturnMsg
 
+resp = []
+msgLst = []
+msgcount = 0
 
 '''
 suggested routing for planned pages
@@ -20,12 +24,16 @@ def ai():
 
 @views.route("/strangers", methods = ['POST','GET'])
 def strangers():
+    global resp, msgcount, msgLst
     if request.method == 'POST':
-        usr = request.form['nm']
-        print(usr)
-        return render_template("strangers.html", arg0=usr)
+        msg = request.form['qns']
+        if len(resp)==0 or msg!=msgLst[-1]:
+            msgLst.append(msg)
+            resp.append(getReturnMsg(msg))
+            msgcount = msgcount+1
+        return render_template("strangers.html", arg0=resp, arg1 = msgcount, arg2 = msgLst)
     else:
-        return render_template("strangers.html", arg0='')
+        return render_template("strangers.html", arg0=resp, arg1 = msgcount, arg2 = msgLst)
 
 @views.route("/protection")
 def protection():
@@ -34,3 +42,10 @@ def protection():
 @views.route("/quiz")
 def quiz():
     return "quiz"
+
+# @views.route("/reset",methods=['POST'])
+# def reset():
+#     global resp, msgcount
+#     resp = []
+#     msgcount = 0
+#     return jsonify(success=True)
